@@ -1,0 +1,34 @@
+/* Skill pages (Writing, Speaking, Listening) and the Reading lobby: one compact card design.
+   Cards: small icon, title, small label, status line, Start button, then "Practice by part" chips. */
+.sk-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin: 0 0 12px; }
+.sk-head h2 { margin: 0; font-size: 1.35rem; }
+.sk-sub { margin: 0 0 14px; color: var(--muted); font-size: .95rem; }
+.sk-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.sk-filter button { min-height: 44px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font: inherit; font-weight: 600; font-size: .92rem; cursor: pointer; }
+.sk-filter button[aria-pressed="true"] { background: var(--band); color: var(--band-ink); border-color: var(--band); }
+.sk-group { margin: 20px 0 8px; font-size: 1rem; font-weight: 700; color: var(--ink); }
+.sk-entry { display: flex; gap: 10px; flex-wrap: wrap; margin: 2px 0 16px; }
+.sk-entry .btn { flex: none; }
+.sk-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0 0 14px; padding: 0; list-style: none; }
+@media (max-width: 980px) { .sk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .sk-grid { grid-template-columns: minmax(0, 1fr); } }
+.sk-card { display: flex; flex-direction: column; gap: 8px; min-width: 0; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius, 12px); background: var(--surface); color: var(--ink); }
+.sk-top { display: flex; gap: 10px; align-items: flex-start; }
+.sk-ico { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--gold-soft, #fbeadf); color: var(--gold-ink, #9a4a24); }
+.sk-ico svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.sk-card h3 { margin: 0; font-size: 1rem; line-height: 1.25; overflow-wrap: anywhere; }
+.sk-label { margin: 2px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.3; }
+.sk-status { margin: 0; color: var(--muted); font-size: .85rem; }
+.sk-status b { color: var(--ink); }
+.sk-card .btn { align-self: flex-start; min-height: 44px; }
+.sk-parts { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 2px; padding-top: 8px; border-top: 1px solid var(--line); font-size: .8rem; color: var(--muted); }
+.sk-chip { min-height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-2); color: var(--ink); font: inherit; font-size: .82rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+.sk-chip:hover, .sk-chip:focus-visible { border-color: var(--btn-bg); }
+.sk-chip[aria-disabled="true"], .sk-chip:disabled { opacity: .55; cursor: not-allowed; }
+.sk-card.locked { background: var(--surface-2); }
+.sk-card.locked .sk-ico { background: var(--line); color: var(--muted); }
+.sk-more { display: flex; justify-content: center; margin: 4px 0 12px; }
+.sk-note { margin: 4px 0 0; color: var(--muted); font-size: .85rem; }
+.sk-empty { padding: 16px; border: 1px dashed var(--line); border-radius: var(--radius, 12px); color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .sk-card { transition: border-color .12s, box-shadow .12s; } .sk-card:hover { border-color: var(--btn-bg); box-shadow: 0 4px 14px -8px rgba(23, 35, 51, .35); } }
+.reading-panel .sk-grid { grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); }

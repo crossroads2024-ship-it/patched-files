@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="skills.css"></head><body data-tab="skill">
+<div id="skillHome"></div>
+<script>
+// Stub of the app data layer (window.WSApp) — same shape the real /api endpoints provide.
+window.WSTabs = { setTab: function () {} };
+window.WSMocks = { fullListeningMocks: function () { return ['m1']; }, hasTicket: function () { return false; } };
+var acc = { writing: { locked: [{ label: 'Higher-plan set', count: 6, tasks: ['writing_task2'] }] }, speaking: { locked: [] } };
+window.WSApp = {
+  bank: function () { return { writing: [
+    { id: 'w1', task: 'writing_task2', topic: 'City libraries', type: 'Discussion essay' },
+    { id: 'w2', task: 'writing_task1', topic: 'Visitor numbers', type: 'Line graph', testType: 'academic' }
+  ], tests: [], access: acc }; },
+  questions: function () { return [{ id: 'p1-a', part: 1, topic: 'home', topicLabel: 'Home', label: 'Where do you live?' }]; },
+  listenTests: function () { return [{ id: 'lt1', title: 'Joining a sports centre', mins: '2:03', questions: 5, level: 'B1–B2', locked: false }]; },
+  history: function () { return []; }, me: function () { return null; }, api: function () { return Promise.resolve({ tests: [] }); },
+  openWriting: function () {}, openSpeakingPart: function () {}, openListening: function () {}, openListeningSet: function () {}, loadListeningTests: function () { return Promise.resolve(); }
+};
+</script>
+<script src="skills.js"></script>
+<script>
+function out(name, ok, extra) {
+  var li = document.createElement('li'); li.textContent = (ok ? 'PASS ' : 'FAIL ') + name + (extra ? ' — ' + extra : '');
+  li.style.color = ok ? '#0a7a3d' : '#c00'; document.getElementById('results').appendChild(li);
+}
+function run() {
+  var box = document.getElementById('skillHome'), h = box.innerHTML;
+  var strips = box.querySelectorAll('.sk-entry');
+  out('module entry strip rendered', strips.length >= 1, strips.length + ' strip(s) with ' + box.querySelectorAll('.sk-entry .btn').length + ' buttons');
+  out('strip has exactly two options', strips.length && strips[0].querySelectorAll('button').length === 2);
+  out('option A is "Practice tests"', strips.length && strips[0].textContent.indexOf('Practice tests') >= 0);
+  out('option B is "Mock exams"', strips.length && strips[0].textContent.indexOf('Mock exams') >= 0);
+  out('#skPractice anchor exists', !!document.getElementById('skPractice'));
+  out('#skMock anchor exists', !!document.getElementById('skMock'));
+  out('credit message removed from Practice Studio card', h.indexOf('No credit used while you practise') < 0);
+  out('neutral status on Studio card', h.indexOf('Drafting and timing are free') >= 0);
+  out('charge message kept on the paid test card', h.indexOf('Uses one Writing credit, only when assessed') >= 0);
+  out('jump handler registered', typeof window.WSSkills === 'object');
+  // click option B and confirm scrollIntoView was invoked on the mock anchor
+  var scrolled = null;
+  Element.prototype.scrollIntoView = function () { scrolled = this.id || this.className; };
+  strips[0].querySelectorAll('button')[1].click();
+  out('Mock exams click scrolls to #skMock', scrolled === 'skMock', 'target: ' + scrolled);
+  document.title = 'SKILLS TEST DONE';
+}
+setTimeout(run, 300);
+</script>
+<ul id="results"></ul>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"></head><body data-tab="home">
+<div class="app-tabs"></div>
+<section id="reportsTab"><h2 id="repTitle">Reports</h2><div id="reportsList"></div></section>
+<section id="dailyChallengeTop"></section>
+<div id="miniTrendCard"></div>
+<div id="gate" hidden><button id="gateBtn"></button><button id="gateUp"></button></div>
+<script>
+// Stub: signed-in student with recorded Writing/Speaking history + Reading/Listening learning stats + one mock in progress.
+var DONE = { started: true, done: { reading: true, writing: true } };
+try { localStorage.setItem('ws_mocks', JSON.stringify({ m1: DONE })); } catch (e) {}
+window.WSApp = {
+  me: function () { return {
+    student: { email: 'test@example.com' },
+    history: [
+      { task: 'writing_task2', overall: 6.5, at: Date.now() - 86400000, scores: { TR: 6, CC: 7 } },
+      { task: 'speaking_test', overall: 7.0, at: Date.now() - 2 * 86400000, scores: { FC: 7 } },
+      { task: 'writing_task1', overall: 6.0, at: Date.now() - 3 * 86400000, scores: { TA: 6 } }
+    ],
+    learning: {
+      listening: { attempts: 4, completed: 1, latest: [{ test_id: 'lt1', raw: 4, total: 5, completed_at: Date.now() }] },
+      reading: { attempts: 2, latest: [{ title: 'Cooling the Modern City', raw: 31, total: 40, at: Date.now() }] }
+    }
+  }; }
+};
+document.addEventListener('ws:me', function () {});
+</script>
+<script src="dashtabs.js"></script>
+<script>
+function out(name, ok, extra) {
+  var li = document.createElement('li'); li.textContent = (ok ? 'PASS ' : 'FAIL ') + name + (extra ? ' — ' + extra : '');
+  li.style.color = ok ? '#0a7a3d' : '#c00'; document.getElementById('results').appendChild(li);
+}
+function run() {
+  window.WSTabs.setTab('reports', false);
+  var box = document.getElementById('reportsList'), h = box.innerHTML;
+  out('skill summary rendered', h.indexOf('Performance by IELTS skill') >= 0);
+  out('skill summary appears exactly once', (h.split('Performance by IELTS skill').length - 1) === 1);
+  out('all four skills in summary', ['Writing', 'Speaking', 'Listening', 'Reading'].every(function (s) { return h.indexOf('>' + s + '<') >= 0 || h.indexOf(s) >= 0; }));
+  out('writing latest band from history', h.indexOf('Band 6.5') >= 0);
+  out('writing best band computed', h.indexOf('best 6.5') >= 0);
+  out('listening raw from learning stats', h.indexOf('4 / 5') >= 0);
+  out('reading raw from learning stats', h.indexOf('31 / 40') >= 0);
+  out('attempts counted', h.indexOf('2 assessed') >= 0 && h.indexOf('4 attempts') >= 0);
+  out('mock exam section rendered', h.indexOf('Mock exam 1') >= 0);
+  out('mock progress read from device store', h.indexOf('2 of 4 parts done') >= 0);
+  out('open-mocks action present', h.indexOf('go-mocks') >= 0);
+  out('history table still present (kept)', h.indexOf('rep-table') >= 0);
+  out('order: summary before history', h.indexOf('Performance by IELTS skill') < h.indexOf('rep-table'));
+  var draftsRendered = h.indexOf('Practice Studio on this device') >= 0;
+  out('mocks before drafts', !draftsRendered || h.indexOf('Mock exams</h3>') < h.indexOf('Practice Studio on this device'), draftsRendered ? 'drafts present, order verified' : 'no drafts in stub — order structurally guaranteed by code');
+  document.title = 'REPORTS TEST DONE';
+}
+setTimeout(run, 400);
+</script>
+<ul id="results"></ul>

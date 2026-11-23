@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="/gtag.js" async></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard | WritSpeak</title>
+<meta name="description" content="Check your IELTS essay or Speaking answer: band estimates by criterion, your 3 key fixes, and a re-check that shows what you fixed.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WritSpeak">
+<meta property="og:title" content="WritSpeak — IELTS Writing Checker and Speaking Practice">
+<meta property="og:description" content="Band estimates by criterion, your 3 most important fixes, and a re-check that shows what you fixed.">
+<meta property="og:image" content="https://writspeak.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://writspeak.com/og-image.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/ui.css">
+<link rel="stylesheet" href="/studio.css">
+<link rel="stylesheet" href="/app-ref.css">
+<link rel="stylesheet" href="/dashboard-polish.css">
+<link rel="stylesheet" href="/wsplayer.css">
+<link rel="stylesheet" href="/skills.css">
+<link rel="stylesheet" href="/farewell.css">
+<link rel="stylesheet" href="/listening-full.css">
+<link rel="stylesheet" href="/ds.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#12223f">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="WritSpeak">
+</head>
+<body class="app-shell" data-tab="home" data-gate="pending">
+<header class="site-bar gutter">
+  <div class="inner">
+    <a class="brand" href="#top" aria-label="WritSpeak dashboard"><span class="brand-mark" aria-hidden="true"><img src="/img/logo.jpg" alt="WritSpeak logo" width="40" height="40"></span><span>WritSpeak<small>IELTS coach</small></span></a>
+    <div class="bar-right">
+      <button class="side-toggle" id="sideToggle" type="button" aria-expanded="true" aria-controls="siteNav" aria-label="Collapse sidebar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <nav class="top-nav" id="siteNav" aria-label="Main navigation">
+        <a href="#top" data-nav="dash" aria-label="Dashboard"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/></svg><span>Dashboard</span></a>
+        <div class="nav-group" role="group" aria-label="Practise">
+          <span class="nav-group-label">PRACTISE</span>
+          <a href="#writing" data-nav="check" data-go="writing" aria-label="Writing"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4"/></svg><span>Writing</span></a>
+          <a href="#speaking" data-nav="check" data-go="speaking" aria-label="Speaking"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span>Speaking</span></a>
+          <a href="#listening" data-nav="check" data-go="listening" aria-label="Listening"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg><span>Listening</span></a>
+          <a href="/reading?from=dashboard" data-nav="reading" aria-label="Reading"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 6v15M8 7h8M8 11h8M8 15h5"/></svg><span>Reading</span></a>
+        </div>
+        <div class="nav-group" role="group" aria-label="My results">
+          <span class="nav-group-label">MY RESULTS</span>
+          <a href="#reports" data-nav="reports" aria-label="Reports"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7zM15 3v4h4M10 12h6M10 16h6"/></svg><span>Reports</span></a>
+        </div>
+        <div class="nav-group" role="group" aria-label="Account">
+          <span class="nav-group-label">ACCOUNT</span>
+          <a href="#plans" data-nav="plans" aria-label="Pricing"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg><span>Pricing</span></a>
+          <a href="#contact" data-nav="contact" aria-label="Contact Support"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Contact Support</span></a>
+        </div>
+        <button type="button" class="nav-more" id="navMore" aria-expanded="false" aria-label="More pages"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></button>
+        <button type="button" class="logout-btn" id="navLogout" aria-label="Log out" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4M16 8l4 4-4 4M20 12H9"/></svg><span>Log out</span></button>
+      </nav>
+      <button class="chip" id="planChip" type="button" aria-haspopup="dialog">Account · <b>Sign in</b></button>
+    </div>
+  </div>
+</header>
+
+<main class="gutter" id="check">
+  <div class="inner">
+    <section class="gate" id="gate" hidden aria-labelledby="gateTitle">
+      <img class="gate-logo" src="/img/logo.jpg" alt="WritSpeak" width="72" height="72">
+      <h2 id="gateTitle">Sign up or log in to open your dashboard</h2>
+      <p>Your dashboard is private. New here? Sign up with your Google account in one click. Already have an account? Log in. No card needed.</p>
+      <p><button class="btn primary" id="gateUp" type="button">Sign up free</button> <button class="btn" id="gateBtn" type="button">Log in</button></p>
+      <p class="muted">Want to look around first? Read how <a href="/#how">WritSpeak works</a> or open a <a href="/sample-report">sample report</a>.</p>
+    </section>
+    <p class="dash-back"><a href="#top" data-back-dashboard>← Dashboard</a></p>
+    <div class="app-top" id="top">
+      <div class="app-top-quota" aria-label="Usage and access">
+        <span class="quota" id="qWriting"><span class="lbl2">Writing</span><span class="bar"><span></span></span><span class="txt">-</span></span>
+        <span class="quota" id="qSpeaking"><span class="lbl2">Speaking</span><span class="bar"><span></span></span><span class="txt">-</span></span>
+        <span class="quota" id="qListening"><span class="lbl2">Listening practice</span><span class="bar"><span></span></span><span class="txt">-</span></span>
+        <span class="quota" id="qMock"><span class="lbl2">Full mocks</span><span class="bar"><span></span></span><span class="txt">-</span></span>
+        <span class="quota" id="qPron" hidden><span class="lbl2">Pronunciation</span><span class="bar"><span></span></span><span class="txt">-</span></span>
+        <a class="btn ghost" id="qUpgrade" href="#plans" hidden>See plans</a>
+      </div>
+    </div>
+    <section class="hero hero-dashboard" data-view="home">
+      <h1>Dashboard</h1>
+    </section>
+
+    <section class="dash" id="dash" aria-label="Your overview" data-view="home">
+      <div class="tile"><span class="k">Plan</span><b id="dPlan">-</b><small id="dPlanSub"></small></div>
+      <div class="tile"><span class="k">Writing left</span><b id="dWriting">-</b><small>assessments</small></div>
+      <div class="tile"><span class="k">Speaking left</span><b id="dSpeaking">-</b><small>assessments</small></div>
+      <div class="tile"><span class="k">Latest Writing band</span><b id="dBand">-</b><small id="dBandSub">No results yet</small></div>
+      <div class="tile"><span class="k">Latest pronunciation</span><b id="dPron">-</b><small id="dPronSub">Not assessed yet</small></div>
+    </section>
+
+    <section class="quick" aria-label="Quick access" data-view="home">
+      <button type="button" class="qa" data-go="writing"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4"/></svg>Writing</button>
+      <button type="button" class="qa" data-go="speaking"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Speaking</button>
+      <button type="button" class="qa" data-go="listening"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>Listening practice</button>
+      <a class="qa" href="/reading?from=dashboard"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 6v15M8 7h8M8 11h8M8 15h5"/></svg>Reading practice</a>
+      <button type="button" class="qa" data-go="mocks"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 13l2 2 4-4"/></svg>Mock exams</button>
+      <button type="button" class="qa" data-go="reports"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7zM15 3v4h4M10 12h6M10 16h6"/></svg>My reports</button>
+      <button type="button" class="qa" data-go="studio"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Practice Studio</button>
+      <button type="button" class="qa" data-challenge-quick><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4L12 2z"/></svg>Today’s Challenge</button>
+    </section>
+    <section class="section access-view" id="accessCard" data-view="home" aria-labelledby="accessTitle" hidden></section>
+    <section id="dailyChallengeTop" data-view="home" aria-label="Today’s challenge"></section>
+    <section class="dash-grid" aria-label="Your goal and next step" data-view="home">
+      <div class="ui-card" id="nextTaskCard">
+        <h2 class="h3">Your next task</h2>
+        <p id="nextTaskText">Start with a Writing Task 2 check. You get your estimated band and your 3 most important fixes.</p>
+        <p><button class="btn primary" type="button" id="nextTaskBtn">Start a Writing check</button></p>
+      </div>
+      <div class="ui-card" id="miniTrendCard">
+        <h2 class="h3">Your last 5 Writing bands</h2>
+        <div id="miniTrend"><p class="status">No results yet. Your bands will appear here.</p></div>
+      </div>
+    </section>
+
+<section class="section skill-home" id="skillHome" data-view="skillhome" aria-labelledby="skillTitle"></section>
+
+<nav class="studios" id="practice" aria-label="Choose a studio" data-view="practice">
+      <button type="button" class="studio studio-main" id="openStudio">Practice Studio<small>Timed writing drills, Exam mode, autosave and your history</small></button>
+      <button type="button" class="studio" data-studio="writing" aria-pressed="true">Writing Studio<small>Task 1, Task 2 and letters</small></button>
+      <button type="button" class="studio" data-studio="speaking" data-task="speaking" aria-pressed="false">Speaking Studio<small>Parts 1–3 and full tests</small></button>
+    </nav>
+    <nav class="modules" id="writingTabs" aria-label="Writing task" data-view="practice">
+      <button type="button" class="mod" data-task="writing_task2" aria-pressed="true">Task 2 essay</button>
+      <button type="button" class="mod" data-task="writing_task1" aria-pressed="false">Task 1 report or letter</button>
+    </nav>
+
+    <div class="workspace" id="workspace" role="tabpanel" data-view="practice">
+      <section class="card" aria-labelledby="formTitle">
+        <h2 id="formTitle">Writing Task 2</h2>
+        <div id="typeBlock">
+          <label class="lbl" for="testType">Test type</label>
+          <select id="testType"><option value="academic">IELTS Academic</option><option value="general">IELTS General Training</option></select>
+        </div>
+
+        <div id="speakModeBlock" hidden>
+          <span class="lbl" id="speakModeLbl">How do you want to practise?</span>
+          <div class="seg" role="group" aria-labelledby="speakModeLbl">
+            <button type="button" id="modeRec" aria-pressed="true">Record my answer<small>recommended</small></button>
+            <button type="button" id="modeTest" aria-pressed="false" hidden>Full test<small>Parts 1, 2 and 3</small></button>
+            <button type="button" id="modeText" aria-pressed="false">Paste a transcript<small>typed or voice-to-text</small></button>
+          </div>
+          <div class="mic-check" id="micCheck"><button type="button" class="btn" id="btnMicCheck">Check microphone</button><div class="mic-wave" id="micLevel" role="img" aria-label="Microphone level: the bars move when you speak"></div><span class="help" id="micDevice"></span><p class="status" id="micCheckMsg" aria-live="polite">Test your microphone before you start. Nothing is recorded or saved during the check.</p></div>
+        </div>
+
+        <div id="recordBlock" hidden>
+          <div>
+            <span class="lbl" id="partLbl">Speaking part</span>
+            <div class="seg three" role="group" aria-labelledby="partLbl">
+              <button type="button" class="part" data-part="1" aria-pressed="true">Part 1<small>up to 1 min</small></button>
+              <button type="button" class="part" data-part="2" aria-pressed="false">Part 2<small>up to 2 min</small></button>
+              <button type="button" class="part" data-part="3" aria-pressed="false">Part 3<small>up to 1.5 min</small></button>
+            </div>
+          </div>
+          <div class="task-cards mt" id="spCards" aria-label="Speaking questions"></div>
+          <p class="help question-rotation-note">Question order refreshes daily. The library is expanded as new original practice questions are added.</p>
+          <details class="fold mt"><summary>Choose from a list instead</summary><label class="lbl" for="qSelect">Question</label><select id="qSelect"></select></details>
+          <div class="qbox mt" id="qBox" aria-live="polite" translate="no"></div>
+          <div class="row mt" id="prepRow" hidden><button type="button" class="btn" id="btnPrep">Start 1 minute to prepare</button><span class="status" id="prepTimer"></span></div>
+          <div class="avatar-slot mt" id="avatarSlot" hidden></div>
+          <div class="notice warn mt" id="micNotice" hidden></div>
+          <div class="row mt">
+            <button type="button" class="btn rec" id="btnRec">Start recording</button>
+            <span class="timer" id="timer" aria-live="off">0:00</span>
+            <span class="status" id="recState" aria-live="polite">Not recording</span>
+          </div>
+          <div id="reviewBlock" hidden class="mt">
+            <span class="lbl">Listen to your answer</span>
+            <audio id="playback" controls></audio>
+            <div class="row mt">
+              <button type="button" class="btn primary" id="btnSend">Get my feedback</button>
+              <button type="button" class="btn" id="btnAgain">Record again</button>
+              <button type="button" class="btn" id="btnDownloadRecording" hidden>Download recording</button>
+            </div>
+            <p class="help" id="costNote"></p>
+          </div>
+          <p class="help">Your recording is transcribed and assessed. WritSpeak does not retain it. Use Download recording to save a copy to your device before submitting. <a href="/privacy">Privacy</a></p>
+        </div>
+
+        <div id="testBlock" hidden>
+          <div id="testSetup">
+            <p class="notice ok" id="testResultNote" hidden>Your test is marked. <a href="#resultPanel">Show my result</a> (below).</p>
+            <h3 class="mock-h">Speaking mock test</h3>
+            <p class="help" id="testInfo">A realistic IELTS-style interview, about 11–14 minutes. You answer aloud into your microphone. There is no typing or pasting. The examiner’s questions are spoken, and recording starts by itself after each one.</p>
+            <ol class="mock-plan" aria-label="How the test runs">
+              <li><strong>Part 1 · 4–5 min</strong> Eight short questions on two familiar topics.</li>
+              <li><strong>Part 2 · about 3–4 min</strong> A topic card. 1 minute to prepare, then up to 2 minutes to speak, then one brief follow-up question.</li>
+              <li><strong>Part 3 · 4–5 min</strong> Four discussion questions linked to the card.</li>
+            </ol>
+            <label class="lbl" for="testSelect">Choose a test</label>
+            <select id="testSelect"></select>
+            <div class="mic-check" id="mockMicBox">
+              <h4>Step 1: check your microphone</h4>
+              <div class="row"><button type="button" class="btn" id="btnMockMic">Check my microphone</button><span class="status" id="micCheckState" aria-live="polite">Not checked yet</span></div>
+              <div class="mic-wave" id="micMeter" role="img" aria-label="Microphone level: the bars move when you speak"></div>
+              <div class="notice warn" id="micHelp" role="alert" hidden></div>
+              <audio id="micPlayback" controls hidden></audio>
+            </div>
+            <p class="help" id="testCost"></p>
+            <p class="help">Full mock answers are processed as you go and are not available as downloads. Use individual Speaking practice if you want to save a recording to your device.</p>
+            <div class="row mt"><button type="button" class="btn primary" id="btnTestStart" disabled>Step 2: start the test</button><span class="status" id="testStartHint"></span></div>
+          </div>
+          <div id="testRun" hidden>
+            <div class="test-head"><span id="testStep">Part 1 · question 1 of 8</span><span id="testPart" class="tag-part">Part 1</span></div>
+            <div class="mock-clock" aria-live="off"><span>Test time <b id="mockElapsed">0:00</b> of about 11–14 min</span><span>This part <b id="mockSection">0:00</b></span></div>
+            <div class="test-bar" aria-hidden="true"><progress id="testBarFill" max="100" value="0"></progress></div>
+            <div class="qbox mt" id="testQ" aria-live="polite" translate="no"></div>
+            <div class="row mt" id="testPrepRow" hidden><button type="button" class="btn" id="btnTestPrep">I am ready, start now</button><span class="status prep-big" id="testPrepTimer" aria-live="off"></span></div>
+            <div class="row mt">
+              <button type="button" class="btn rec" id="btnTestRec">Finish answer</button>
+              <span class="timer" id="testTimer" aria-live="off">0:00</span>
+              <span class="status" id="testState" aria-live="polite"></span>
+            </div>
+            <div id="testDone" class="mt" hidden>
+              <p><strong>All questions answered.</strong> Check the answers below, then get one result for the whole test.</p>
+              <ol class="test-summary" id="testSummary"></ol>
+              <p class="status" id="testWait" hidden>Your last answers are still being turned into text…</p>
+              <p class="notice warn" id="testShort" hidden></p>
+              <div class="row"><button type="button" class="btn primary" id="btnTestFinish">Get my result</button></div>
+              <p class="help" id="testFinishCost"></p>
+            </div>
+            <p class="mt"><button type="button" class="btn ghost small" id="btnTestQuit">Leave this test</button></p>
+          </div>
+        </div>
+
+        <div id="bankBlock" hidden>
+          <div class="ui-tabs" role="tablist" id="wTabs" aria-label="Writing task type">
+            <button class="ui-tab" role="tab" type="button" data-k="t1a" aria-selected="false">Task 1 Academic</button>
+            <button class="ui-tab" role="tab" type="button" data-k="t1g" aria-selected="false">Task 1 General</button>
+            <button class="ui-tab" role="tab" type="button" data-k="t2" aria-selected="true">Task 2</button>
+            <button class="ui-tab" role="tab" type="button" data-k="own" aria-selected="false">My question</button>
+          </div>
+          <div class="ui-chips mt" id="wChips" role="group" aria-label="Filter questions"></div>
+          <div class="task-cards mt" id="wCards"></div>
+          <p class="help question-rotation-note">Question order refreshes daily. Locked topics show what becomes available with an upgraded plan.</p>
+          <details class="fold mt"><summary>Choose from a list instead</summary>
+            <label class="lbl" for="bankSelect">Practice question</label>
+            <select id="bankSelect"></select>
+          </details>
+        </div>
+        <div id="questionBlock">
+          <label class="lbl" for="questionText" id="questionLabel">Task question <span class="opt">— recommended, needed to judge Task Response</span></label>
+          <textarea id="questionText" class="short" placeholder="Paste the exam question here…"></textarea>
+        </div>
+        <div id="materialBlock" hidden>
+          <label class="lbl" for="materialText">Chart, graph, table, map or process <span class="opt">— needed so your figures can be checked</span></label>
+          <div id="materialVisual" class="bank-visual" hidden></div>
+          <textarea id="materialText" class="short" placeholder="Type the main figures, e.g. Urban 2010 40%, 2025 95%; Rural 2010 12%, 2025 80% — or add a picture below."></textarea>
+          <div class="row mt"><label class="btn" for="chartInput">Add a picture of the chart</label><input type="file" id="chartInput" accept="image/*" class="sr-only"></div>
+          <div class="thumbs mt" id="chartThumb"></div>
+        </div>
+        <div id="listenModeBlock" hidden>
+          <span class="lbl" id="listenModeLbl">Choose</span>
+          <div class="seg" role="group" aria-labelledby="listenModeLbl">
+            <button type="button" id="modeLib" aria-pressed="true">Practice tests</button>
+            <button type="button" id="modeMock" aria-pressed="false">Mock tests</button>
+          </div>
+        </div>
+        <div id="libBlock" hidden>
+          <span class="lbl" id="libLbl">Practice tests — original WritSpeak recordings</span>
+          <div class="lib-list" id="libList" role="group" aria-labelledby="libLbl"></div>
+          <div class="lib-test" id="libTest" hidden></div>
+        </div>
+        <div id="audioBlock" hidden>
+          <label class="lbl" for="audioFile">Listening audio <span class="opt">— optional: play the recording from your phone or computer</span></label>
+          <input type="file" id="audioFile" accept="audio/*">
+          <audio id="audioPlayer" controls hidden></audio>
+        </div>
+        <div id="passageBlock" hidden>
+          <label class="lbl" for="passageText">Transcript <span class="opt">— needed only for the AI explanation</span></label>
+          <textarea id="passageText" class="mid" placeholder="Paste the reading passage here…"></textarea>
+        </div>
+        <div id="keyBlock" hidden>
+          <label class="lbl" for="keyText">Answer key <span class="opt">— from your book or the WritSpeak Team</span></label>
+          <textarea id="keyText" class="mid" placeholder=""></textarea>
+          <p class="help">One answer per line with its number. Put accepted alternatives after a slash: <code>2. the sun / sun</code>. Add a word limit as the first line if your test has one: <code>limit: 2</code>.</p>
+        </div>
+        <div id="uploadBlock" class="upload">
+          <p><strong>Wrote it on paper?</strong> Take a clear photo of each page (up to 3), or add a PDF, Word or text file.</p>
+          <label class="lbl" for="fileInput">Add your answer from a photo or file</label>
+          <input type="file" id="fileInput" accept="image/*,.pdf,application/pdf,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.txt,text/plain" multiple>
+          <div class="thumbs" id="thumbs"></div>
+          <div class="row" id="readRow" hidden><button type="button" class="btn primary" id="btnRead">Read my answer</button><span class="status" id="readMsg" aria-live="polite"></span></div>
+          <p class="help" id="uploadHelp">Photos: lay the page flat, in good light, the whole page in the frame. You will check the text before it is marked.</p>
+        </div>
+
+        <div id="answerBlock">
+          <label class="lbl" for="inputText" id="inputLabel">Your essay</label>
+          <div class="notice info draft-note" id="draftNote" hidden></div>
+          <div class="unclear" id="unclearNote" hidden></div>
+          <textarea id="inputText" placeholder=""></textarea>
+        </div>
+        <div class="meta" id="metaRow"><span id="wordCount" aria-live="polite">0 words</span><span id="wordHint"></span><button type="button" class="btn ghost" id="btnWTimer">Start 40-minute timer</button><span id="wTimer" aria-live="off"></span></div>
+        <div class="row" id="actionRow">
+          <button class="btn primary" id="btnCheck" type="button">Check my essay</button>
+          <button class="btn" id="btnSample" type="button">Try a sample</button>
+          <button class="btn" id="btnClear" type="button">Clear</button>
+        </div>
+        <div id="checkPanel" hidden aria-live="polite"></div>
+        <p class="status" id="statusMsg" aria-live="polite"></p>
+      </section>
+
+      <aside class="side">
+        <details class="card howto" id="howto" aria-labelledby="howTitle">
+          <summary id="howTitle">How this works</summary>
+          <ol id="howSteps"></ol>
+          <p class="marked" id="howMarked"></p>
+        </details>
+        <p class="notice info">Results are practice estimates. They are not official IELTS results, and this site is not affiliated with IELTS, the British Council or IDP.</p>
+      </aside>
+    </div>
+
+    <section class="card mock-panel" id="mockWriting" hidden aria-labelledby="mwTitle" data-view="practice">
+      <h2 id="mwTitle">Writing mock test</h2>
+      <p class="help">Exam conditions. The real Writing paper lasts 60 minutes: Task 1 about 20 minutes (at least 150 words) and Task 2 about 40 minutes (at least 250 words). In Exam mode the clock cannot be paused, there are no hints, and time up locks your answer.</p>
+      <p class="help">The combined 60-minute Writing Mock is available from the dedicated Mock Tests tab. It includes both tasks, one continuous timer and one combined report.</p>
+      <p class="help">Use Practice Studio here for individual Task 1 and Task 2 practice.</p>
+      <p><button type="button" class="btn primary" id="mwStart">Open Mock Tests</button></p>
+    </section>
+    <section class="card mock-panel" id="mockListening" hidden aria-labelledby="mlTitle" data-view="practice">
+      <h2 id="mlTitle">Listening mock test</h2>
+      <p class="help">Original WritSpeak practice material with computer-generated voices. Each test has 3 parts and 15 questions. You hear each recording once, as in the real test, so use headphones and a quiet room. A short pause at the start of each part lets you read the questions.</p>
+      <div class="lib-list" id="mlList" role="group" aria-labelledby="mlTitle"></div>
+      <div id="mlRun" hidden></div>
+      <p class="notice info mt">This is a short mock (15 questions). An IELTS band needs a full 40-question test, so you get a raw score here.</p>
+    </section>
+
+    <div class="notice bad mt" id="errorBox" role="alert" hidden data-view="practice"></div>
+
+    <section class="card results" id="resultPanel" hidden aria-labelledby="resTitle" data-view="practice">
+      <div class="print-head" id="printHead" hidden></div>
+      <h2 id="resTitle">Your result</h2>
+      <div id="scorePanel" hidden>
+        <div class="scores" id="scoreGrid"></div>
+        <div class="agree wait" id="agreeLine"></div>
+      </div>
+      <div class="notice warn" id="cutNotice" hidden></div>
+      <div id="heardBlock" hidden><span class="lbl">What we heard (automatic transcript, mistakes marked)</span><audio id="resultAudio" controls hidden></audio><div class="transcript" id="transcript" translate="no"></div></div>
+      <div class="notice warn" id="flags" hidden></div>
+      <div class="report" id="report" aria-live="polite"><span class="thinking">Thinking…</span></div>
+      <div class="row" id="explainRow" hidden><button class="btn" id="btnExplain" type="button">Explain my wrong answers</button><span class="status" id="explainMsg"></span></div>
+      <div class="report" id="explainOut" hidden></div>
+      <div class="row no-print">
+        <button class="btn" id="btnTryAgain" type="button" hidden>Try again</button>
+        <button class="btn secondary" id="btnNextTask" type="button" hidden>Next task</button>
+        <button class="btn" id="btnPdf" type="button">Download PDF</button>
+        <button class="btn" id="btnCopy" type="button">Copy feedback</button>
+        <span class="status" id="copyMsg" aria-live="polite"></span>
+      </div>
+      <p class="stamp" id="stamp"></p>
+      <p class="notice info">IELTS-style estimate for practice. Not an official IELTS result. Real exam scores come only from a test centre.</p>
+    </section><p class="more-row" id="moreRow" data-view="practice"><span>More practice:</span>
+      <button type="button" class="mod more" data-task="listening">Listening practice</button>
+      <button type="button" class="mod more" data-task="practice">Practice drills</button>
+    </p>
+
+    <section class="section mock-view" id="mocks" data-view="mocks" aria-labelledby="mocksTitle"><div id="mockRoot"></div></section>
+    
+    <section class="section contact-view" id="contact" data-view="contact" aria-labelledby="contactTitle">
+      <h2 id="contactTitle">Contact Support</h2>
+      <p class="lead">Email is the only way to reach the WritSpeak Team. We reply within <strong>two working days</strong> (Monday to Friday).</p>
+      <p class="contact-box"><a class="btn primary" href="mailto:support@writspeak.com?subject=WritSpeak%20support">Email Support</a> <button type="button" class="btn" data-copy="support@writspeak.com" id="copySupport">Copy address</button> <span class="status" id="copyState" aria-live="polite"></span></p>
+      <p>The button opens the email app on your phone or computer with <strong>support@writspeak.com</strong> filled in. If nothing opens, copy the address and write from any email service.</p>
+      <h3>What to write about</h3>
+      <ul>
+        <li><strong>Purchasing a plan.</strong> Choose your plan on the Pricing page and complete secure online checkout.</li>
+        <li><strong>An existing access code that does not work.</strong> Include only its last four characters, never the full code.</li>
+        <li><strong>A payment or refund problem.</strong> See the <a href="/refunds">refund policy</a> and include your payment reference, if available.</li>
+        <li><strong>A mistake in a check</strong> or a bug. Tell us which page, what you did and what you saw.</li>
+      </ul>
+      <p class="help">Never email passwords, card numbers or your full access code. We will never ask for them.</p>
+    </section>
+
+    <section class="section" id="plans" aria-labelledby="plansTitle" data-view="plans">
+      <h2 id="plansTitle">Pricing</h2>
+      <p class="lead">Start free. When you need more checks, choose a plan.</p>
+      <div class="plans" id="planCards"><p class="status">Loading plans…</p></div>
+      <p class="muted">One Mock credit covers all four skills in a full mock and does not use separate Writing or Speaking assessment credits. A standalone full Speaking test uses one Speaking assessment credit. Pronunciation checks are available only when the pronunciation service is enabled.</p>
+      <div class="table-wrap"><table class="tbl plan-table" id="appPlanTable"><caption class="sr-only">Compare plans</caption></table></div>
+      <p class="muted" id="fairUse">Fair use: each plan has a daily limit on checks, so one code cannot be shared widely. If you reach it, come back the next day; a refused check is not charged. See the <a href="/terms">Terms</a>.</p>
+      <div id="payBox" class="card pay-box" hidden aria-labelledby="payTitle">
+        <h3 id="payTitle">Pay online</h3>
+        <div class="fields">
+          <div><label class="lbl" for="payCountry">Country</label><select id="payCountry"></select></div>
+          <div><label class="lbl" for="payPlan">Plan</label><select id="payPlan"></select></div>
+          <div><label class="lbl" for="payPeriod">Billing period</label><select id="payPeriod"></select></div>
+        </div>
+        <dl class="pay-sum" id="paySum" aria-live="polite"></dl>
+        <label class="pay-agree"><input type="checkbox" id="payAgree"><span>I understand this is a one-time payment that does not renew automatically, and I have read the <a href="/refunds">refund policy</a>.</span></label>
+        <div class="row mt"><button class="btn primary" id="payGo" type="button" disabled>Pay securely</button><span class="status" id="payMsg" aria-live="polite"></span></div>
+        <p class="muted" id="payTest" hidden>Test mode: no real money is taken.</p>
+      </div>
+      <div id="payManual" class="help">
+        <p>Online checkout is temporarily unavailable. Please try again later. If you have already paid and your plan is not active, contact <a href="mailto:support@writspeak.com">support@writspeak.com</a> with your payment reference.</p>
+      </div>
+    </section>
+
+    <section class="section tab-pane" id="reportsTab" aria-labelledby="repTitle" data-view="reports"><span id="reports"></span>
+      <h2 id="repTitle">Reports</h2>
+      <p class="lead">Every assessment across all four IELTS modules, newest first.</p>
+      <div id="reportsList"><p class="status">Loading…</p></div>
+      <div class="calc-view bandcalc-widget" aria-label="IELTS band score calculator"><details class="bandcalc" id="bandcalc">
+  <summary>IELTS band score calculator <span class="bc-widget-mark" aria-hidden="true">⌄</span></summary>
+  <div class="bc-body">
+    <p class="muted">Enter your Listening, Reading, Writing and Speaking bands to calculate your overall IELTS estimate. Or type a Listening raw score out of 40 to convert it to a band. Practice estimate only.</p>
+    <div class="bc-grid">
+      <label>Listening band<input type="number" min="0" max="9" step="0.5" inputmode="decimal" data-bc="l"></label>
+      <label>Reading band<input type="number" min="0" max="9" step="0.5" inputmode="decimal" data-bc="r"></label>
+      <label>Writing band<input type="number" min="0" max="9" step="0.5" inputmode="decimal" data-bc="w"></label>
+      <label>Speaking band<input type="number" min="0" max="9" step="0.5" inputmode="decimal" data-bc="s"></label>
+    </div>
+    <div class="bc-grid">
+      <label>Listening raw score (0 to 40)<input type="number" min="0" max="40" step="1" inputmode="numeric" data-raw="l"></label>
+    </div>
+    <p class="bc-out" id="bcOut" aria-live="polite">Enter all four skill bands to see your overall band.</p>
+    <p class="muted">Raw-to-band tables vary a little between tests. Overall band: average of four skills, rounded to the nearest half band (.25 and .75 round up).</p>
+  </div>
+</details></div>
+    </section>
+    <section class="section tab-pane" id="progress" aria-labelledby="progTitle" data-view="reports">
+      <h2 id="progTitle">My progress</h2>
+      <p class="lead" id="progLead">The mistakes you repeat, and your band estimates over time (scores only, never your text).</p>
+      <div class="progress-grid">
+        <section class="card learning-card" id="skillsProgressCard" aria-labelledby="skillsProgressTitle">
+          <h3 id="skillsProgressTitle">Reading and Listening progress</h3>
+          <p class="help">Completed assessments are saved to your WritSpeak account and remain available when you sign in on another device.</p>
+          <div id="skillsProgress"><p class="status">Your completed Reading and Listening assessments will appear here.</p></div>
+        </section>
+        <section class="card" id="mistakesCard" aria-labelledby="mistTitle">
+          <h3 id="mistTitle">Your recurring mistakes</h3>
+          <div id="mistakeList"><p class="status">After a few checks, the mistakes you repeat will appear here, with an example of each.</p></div>
+          <p class="help">Saved on this device only.</p>
+        </section>
+        <section class="card" id="nextCard" aria-labelledby="nextTitle" hidden>
+          <h3 id="nextTitle">Your next practice</h3>
+          <div id="nextPractice"></div>
+        </section>
+        <section class="card" aria-labelledby="usageTitle">
+          <h3 id="usageTitle">This month</h3>
+          <p class="status" id="planLine"></p>
+          <ul class="usage-list" id="usageList"></ul>
+        </section>
+        <section class="card" aria-labelledby="trendTitle">
+          <h3 id="trendTitle">Your band estimates</h3>
+          <div class="seg" role="group" aria-label="Skill">
+            <button type="button" class="trendBtn" data-skill="writing" aria-pressed="true">Writing</button>
+            <button type="button" class="trendBtn" data-skill="speaking" aria-pressed="false">Speaking</button>
+          </div>
+          <div id="trend"><p class="status">No results yet. Check an answer to start your record.</p></div>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>
+
+<dialog id="accountDialog" aria-labelledby="accTitle" class="acc-dlg">
+  <button class="acc-x" id="accClose" type="button" aria-label="Close">&times;</button>
+  <h2 id="accTitle">Create your free account</h2>
+  <div class="acc-modes" id="accModes" role="tablist" aria-label="Sign up or log in"><button type="button" role="tab" id="accModeUp" aria-selected="true">Sign up</button><button type="button" role="tab" id="accModeIn" aria-selected="false">Log in</button></div>
+  <div id="accIn">
+    <p class="acc-lead" id="accLead"></p>
+    <div id="accGoogleBox" hidden>
+      <div class="row"><a class="btn primary acc-wide" id="accGoogle" href="/api/account/google/start">Continue with Google</a></div>
+      <p class="help">No password to create or remember. We only get your verified email address.</p>
+      <p class="help or-line"><button class="linklike" id="accUseEmail" type="button" aria-expanded="false">Use email and password instead</button></p>
+    </div>
+    <form id="accStartForm" novalidate>
+      <label class="lbl" for="accEmail">Email</label>
+      <input type="email" id="accEmail" autocomplete="email" maxlength="254" required placeholder="you@example.com">
+      <label class="lbl" for="accPass">Password</label>
+      <input type="password" id="accPass" autocomplete="new-password" maxlength="128" required aria-describedby="accPassHelp">
+      <p class="help" id="accPassHelp">At least 8 characters.</p>
+      <label class="acc-show"><input type="checkbox" id="accShow"> Show password</label>
+      <div class="row"><button class="btn primary acc-wide" id="accSend" type="submit">Create free account</button></div>
+      <p class="help acc-links" id="accForgotRow" hidden><button class="linklike" id="accForgot" type="button">Forgot password?</button></p>
+      <p class="help" id="accSwitch"><span id="accSwitchTxt"></span> <button class="linklike" id="accSwitchBtn" type="button" aria-label="Switch between sign up and sign in"></button></p>
+      <p class="help acc-fine">By continuing you agree to the <a href="/terms">Terms</a> and the <a href="/privacy">Privacy policy</a>.</p>
+    </form>
+  </div>
+  <div id="accReset" hidden>
+    <p class="acc-lead">Enter your email and we will send you a link to choose a new password.</p>
+    <form id="accResetForm" novalidate>
+      <label class="lbl" for="accResetEmail">Email</label>
+      <input type="email" id="accResetEmail" autocomplete="email" maxlength="254" required placeholder="you@example.com">
+      <div class="row"><button class="btn primary" id="accResetSend" type="submit">Send reset link</button><button class="btn" id="accResetBack" type="button">Back to log in</button></div>
+    </form>
+  </div>
+  <div id="accSent" hidden>
+    <p class="acc-lead"><strong>Check your email.</strong> If an account exists for that address, we sent a link to choose a new password. It works for 30 minutes and only once.</p>
+    <p class="help" id="accSentTo"></p>
+    <div class="row"><button class="btn" id="accResend" type="button">Send the link again</button><button class="btn" id="accBack" type="button">Back to log in</button></div>
+  </div>
+  <div id="accNew" hidden>
+    <p class="acc-lead">Choose a new password for your account.</p>
+    <form id="accNewForm" novalidate>
+      <label class="lbl" for="accNewPass">New password</label>
+      <input type="password" id="accNewPass" autocomplete="new-password" maxlength="128" required aria-describedby="accNewHelp">
+      <p class="help" id="accNewHelp">At least 8 characters.</p>
+      <label class="acc-show"><input type="checkbox" id="accNewShow"> Show password</label>
+      <div class="row"><button class="btn primary acc-wide" id="accNewSave" type="submit">Save password and log in</button></div>
+    </form>
+  </div>
+  <div id="accRole" hidden>
+    <p class="acc-lead">One quick question: I am a&hellip;</p>
+    <div class="role-choices">
+      <button class="btn primary" type="button" data-role="student">Student</button>
+      <button class="btn" type="button" data-role="tutor">Tutor</button>
+      <button class="btn" type="button" data-role="researcher">Researcher</button>
+    </div>
+  </div>
+  <div id="accOut" hidden>
+    <p class="acc-who"><strong id="accWho"></strong><span id="accPlan"></span></p>
+    <p class="help" id="accLeft" hidden></p>
+    <div class="row"><button class="btn primary" id="accOut2" type="button">Log out</button><button class="btn" id="accUpgrade" type="button">See plans</button></div>
+    <details class="acc-more"><summary>More</summary>
+      <div class="row"><button class="btn" id="btnInstall" type="button" hidden>Install on my phone</button><button class="btn" id="accOutAll" type="button">Log out on all devices</button><button class="btn" id="accDelete" type="button">Delete my account</button></div>
+      <p class="help">Install is your choice, never automatic. On iPhone: Share, then Add to Home Screen.</p>
+    </details>
+  </div>
+  <p class="status" id="accMsg" aria-live="polite"></p>
+  <p class="acc-foot" id="accFoot"><button class="linklike" id="accCodeLink" type="button">I have an access code</button></p>
+</dialog>
+
+<dialog class="ui-modal" id="upgradeDialog" aria-labelledby="upTitle">
+  <h2 id="upTitle">Choose a plan</h2>
+  <p id="upText"></p>
+  <div class="row"><button class="btn primary" type="button" id="upPlans">See plans</button><button class="btn" type="button" id="upClose">Not now</button></div>
+</dialog>
+
+<dialog id="codeDialog" aria-labelledby="codeTitle">
+  <form method="dialog" id="codeForm">
+    <h2 id="codeTitle">Your access code</h2>
+    <p class="help" id="codeHelp">Type the code the WritSpeak Team sent you. It looks like WS-AB12-CD34. (The 6-digit code from the sign-in email goes in "Create your free account" instead.)</p>
+    <label class="lbl" for="codeInput">Access code</label>
+    <input type="text" id="codeInput" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20" placeholder="WS-XXXX-XXXX">
+    <p class="status" id="codeMsg" aria-live="polite"></p>
+    <div class="row">
+      <button class="btn primary" id="btnCodeSave" type="submit" value="save">Use this code</button>
+      <button class="btn" id="btnCodeRemove" type="button" hidden>Remove code from this device</button>
+      <button class="btn" id="btnCodeClose" type="button">Close</button>
+    </div>
+  </form>
+</dialog>
+
+<section class="gutter" id="help" aria-labelledby="helpTitle" data-view="home">
+  <div class="inner">
+    <div class="card">
+      <h2 id="helpTitle">Help</h2>
+      <p>New to WritSpeak? The tour shows how to check an answer and read your result. It only plays when you press the button.</p>
+      <div class="row"><button type="button" class="btn primary" data-tour-open>How WritSpeak works</button><a class="btn" href="/contact">Contact the WritSpeak Team</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot gutter">
+  <div class="inner">
+    <div class="contact">Questions or a plan? Email the WritSpeak Team: <a href="mailto:support@writspeak.com"><b>support@writspeak.com</b></a> · reply within two working days</div>
+    <span class="muted">WritSpeak · IELTS-style practice estimates, not official results. Not affiliated with IELTS, the British Council or IDP. Listening practice uses original WritSpeak recordings.</span>
+    <span class="muted">Your essays and recordings are processed by our AI assessment and speech-transcription providers to give feedback. WritSpeak saves your scores, not your text, unless you send an answer to the WritSpeak Team for marking. Legal: <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/refunds">Refunds</a></span>
+  </div>
+</footer>
+<script src="/ui.js" defer></script>
+<script src="/recorder-ui.js" defer></script>
+<script src="/task1-draw.js" defer></script>
+<script src="/task1-visuals.js" defer></script>
+<script src="/studio-core.js" defer></script>
+<script src="/studio.js" defer></script>
+<script src="/listening-mock.js" defer></script>
+<script src="/mic-wave.js" defer></script>
+<script src="/app.js" defer></script>
+<script src="/dashtabs.js" defer></script>
+<script src="/skills.js" defer></script>
+<script src="/listening-full.js" defer></script>
+<script src="/mocks.js" defer></script>
+<script src="/mic-check.js" defer></script>
+<script src="/access.js" defer></script>
+<script src="/bandcalc.js" defer></script>
+<script src="/sidebar.js" defer></script>
+<script src="/account.js" defer></script>
+<script src="/farewell.js" defer></script>
+<script src="/avatar.js" defer></script>
+<script src="/wsplayer.js" defer></script>
+<script src="/tutorial.js" defer></script>
+<script src="/pay.js" defer></script>
+</body>
+</html>

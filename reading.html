@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IELTS Reading Practice | WritSpeak</title>
+<meta name="description" content="Practise original IELTS-style Academic and General Training Reading questions in a timed three-passage examination workspace.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://writspeak.com/reading">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/ui.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/learn.css">
+<link rel="stylesheet" href="/reading.css">
+<link rel="stylesheet" href="/skills.css">
+<link rel="stylesheet" href="/ds.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#12223f">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://writspeak.com/"},{"@type":"ListItem","position":2,"name":"IELTS Reading","item":"https://writspeak.com/reading"}]}</script>
+</head>
+<body data-section="reading">
+<header class="pub-bar gutter"><div class="inner">
+<a class="brand" href="/app" aria-label="WritSpeak dashboard"><span class="brand-mark"><img src="/img/logo.jpg" alt="" width="40" height="40"></span><span>WritSpeak<small>My learning</small></span></a>
+<button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="pubNav" aria-label="Menu">☰</button>
+<nav class="learning-nav pub-nav" id="pubNav" aria-label="Learning navigation">
+<a href="/app">Dashboard</a><a href="/app#writing">Writing</a><a href="/app#speaking">Speaking</a><a href="/app#listening">Listening</a>
+</nav>
+<a class="header-cta" href="/app#login">Dashboard / sign in</a>
+</div></header>
+<main class="gutter"><div class="inner reading-shell">
+<section class="reading-intro" id="readingIntro"><h1>Reading practice</h1><p class="reading-disclaimer">Original IELTS-style practice material. Not an official IELTS test.</p><div class="sk-entry" style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 4px"><a class="btn primary" href="#readingStatus">Practice tests</a><a class="btn" href="/app#mocks">Mock exams</a></div></section>
+<div id="readingStatus" class="reading-status" role="status" aria-live="polite"><noscript>
+      <div class="reading-static-fallback">
+        <h2>Available Reading tests</h2>
+        <ul>
+          <li>Cooling the Modern City</li>
+          <li>Everyday Services and Working Life</li>
+        </ul>
+        <p>Sign in to your WritSpeak dashboard to open a Reading test.</p>
+      </div>
+    </noscript>
+    <p class="status">Choose a Reading test to begin.</p></div>
+<section id="readingLobby" class="reading-lobby" hidden>
+<div class="reading-panel"><h2>Choose a Reading test</h2><p class="muted">Start a full 60-minute paper, or practise one passage (about 20 minutes). Answers autosave to your private account.</p><label class="reading-consent"><input id="readingRetain90" type="checkbox"><span><strong>Keep my Reading answers and results for up to 90 days</strong><small>Optional. If unchecked, they are automatically deleted after 7 days. You can delete your account to remove associated Reading sessions sooner.</small></span></label><div id="readingTests" class="reading-test-list"></div></div>
+</section>
+<section id="readingExam" hidden>
+<div class="reading-toolbar">
+<div class="reading-toolbar-start"><a class="reading-exit" id="readingExit" href="/app" aria-label="Back to your dashboard. Your answers are saved."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span>Dashboard</span></a><span class="reading-mode" id="readingMode">Academic</span><strong id="readingTitle">Reading test</strong></div>
+<div class="reading-clock" aria-live="off"><small>TIME REMAINING</small><strong id="readingTimer">60:00</strong></div>
+<button class="btn primary" id="readingSubmitTop" type="button">Finish test</button>
+</div>
+<div class="reading-progress"><div id="readingProgressFill"></div></div>
+<div class="reading-nav" id="readingSectionNav" aria-label="Passage navigation"></div>
+<p class="reading-part-head" id="readingPartHead"></p>
+<div class="reading-mobile-tabs"><button type="button" data-pane="passage" class="active">Passage</button><button type="button" data-pane="questions">Questions</button></div>
+<div class="reading-workspace">
+<article class="reading-pane reading-passage-pane" id="readingPassagePane"><div class="reading-pane-head"><span id="readingPassageNumber">PASSAGE 1 OF 3</span><h2 id="readingPassageTitle">Passage title</h2></div><div id="readingPassage" class="reading-passage"></div></article>
+<section class="reading-pane reading-question-pane" id="readingQuestionPane" aria-label="Questions"><div class="reading-pane-head"><span id="readingQuestionRange">QUESTIONS 1–13</span><h2>Questions</h2><p id="readingInstructions"></p></div><div id="readingQuestions"></div></section>
+</div>
+<div class="reading-bottom-nav"><button class="btn" id="readingPrev" type="button">Previous passage</button><div id="readingQuestionCount" class="muted">0 of 40 answered</div><button class="btn primary" id="readingNext" type="button">Next passage</button></div>
+<div class="reading-question-map"><strong>Question navigator</strong><div id="readingQuestionMap"></div></div>
+<nav class="reading-part-bar" id="readingPartBar" aria-label="Parts and questions"></nav>
+</section>
+<section id="readingResult" class="reading-result" hidden></section>
+</div></main>
+<footer class="site-foot gutter"><div class="inner"><p>WritSpeak IELTS-style practice. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Support</a></p></div></footer>
+<script src="/site.js"></script>
+<script src="/sidebar.js" defer></script>
+<script src="/reading.js" defer></script>
+</body></html>
